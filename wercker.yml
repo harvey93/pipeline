@@ -61,7 +61,6 @@ build:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         cmd: /pipeline/source/pipeline
-        port: "8080"
         tag: latest
         repository: harvey93/pipeline
         registry: https://registry-1.docker.io/v2
