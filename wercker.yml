@@ -62,7 +62,7 @@ build:
         password: $DOCKER_PASSWORD
         cmd: /pipeline/source/pipeline
         tag: latest
-        repository: harvey93/pipeline
+        repository: hranto/pipeline
         registry: https://registry-1.docker.io/v2
 
 
