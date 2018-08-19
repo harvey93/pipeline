@@ -56,7 +56,7 @@ build:
         name: copy files to wercker output
         code: |
           cp -R ./ ${WERCKER_OUTPUT_DIR}
-          ls $WERCKER_SOURCE_DIR
+          echo $WERCKER_SOURCE_DIR
 
     - internal/docker-push:
         username: $DOCKER_USERNAME
