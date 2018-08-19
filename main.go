@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"rsc.io/quote"
+)
 
 func main() {
 	fmt.Println("Pipeline")
+	fmt.Println(quote.Hello())
 }

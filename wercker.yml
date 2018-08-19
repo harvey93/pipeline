@@ -37,20 +37,20 @@ build:
           cd $WERCKER_SOURCE_DIR
           go version
           go get -u github.com/Masterminds/glide
+          go get -u golang.org/x/vgo
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
-          glide install
 
     # Build the project
     - script:
-        name: go build
+        name: vgo build
         code: |
-          go build
+          vgo build
 
     # Test the project
     - script:
         name: go test
         code: |
-          go test -v $(glide novendor)
+          vgo test 
 
     - script:
         name: copy files to wercker output
