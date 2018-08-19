@@ -57,21 +57,13 @@ build:
         code: |
           cp -R ./ ${WERCKER_OUTPUT_DIR}
 
-   - internal/docker-push:
-       username: $DOCKER_USERNAME
-       password: $DOCKER_PASSWORD
-       cmd: /pipeline/source/pipeline
-       port: "8080"
-       tag: latest
-       repository: harvey93/pipeline
-       registry: https://registry.hub.docker.com
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        cmd: /pipeline/source/pipeline
+        port: "8080"
+        tag: latest
+        repository: harvey93/pipeline
+        registry: https://registry.hub.docker.com
 
-   - cng/cf-deploy:
-       api: $API
-       user: $USER
-       password: $PASSWORD
-       org: $ORG
-       space: $SPACE
-       appname: pipeline
-       docker_image: harvey93/pipeline
 
