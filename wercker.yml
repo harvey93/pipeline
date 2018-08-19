@@ -56,12 +56,11 @@ build:
         name: copy files to wercker output
         code: |
           cp -R ./ ${WERCKER_OUTPUT_DIR}
-          echo $WERCKER_SOURCE_DIR
 
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        cmd: /pipeline/source/pipeline
+        cmd: /go/src/github.com/harvey93/pipeline/pipeline
         tag: latest
         repository: hranto/pipeline
         registry: https://registry-1.docker.io/v2
