@@ -60,6 +60,7 @@ build:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
+        ports: "8080"
         cmd: /go/src/github.com/harvey93/pipeline/pipeline
         tag: latest
         repository: hranto/pipeline
