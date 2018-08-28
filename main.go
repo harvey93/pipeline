@@ -1,12 +1,20 @@
-package main
+package main // import "github.com/harvey93/pipeline"
 
 import (
 	"fmt"
+	"os"
 
-	"rsc.io/quote"
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	fmt.Println("Pipeline")
-	fmt.Println(quote.Hello())
+	err := godotenv.Load()
+	if err != nil {
+		fmt.Println("Error loading .env")
+	}
+
+	port := os.Getenv("PORT")
+	fmt.Println(port)
+
 }
